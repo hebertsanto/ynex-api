@@ -1,7 +1,12 @@
-import mongoose, { Connection } from "mongoose";
+import mongoose from "mongoose";
+import { config } from 'dotenv';
 
-const user = 'hebertsantos0704';
-const password = 'AplrgyIEjs6bsZsF';
+config()
+
+const user = process.env.USER_DATABASE;
+const password = process.env.PASSWORD_DATABASE;
+
+console.log(user, password)
 
 const url_database = `mongodb+srv://${user}:${password}@cluster0.eream7r.mongodb.net/?retryWrites=true&w=majority`
 

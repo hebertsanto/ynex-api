@@ -3,11 +3,12 @@ import bodyParser from 'body-parser';
 import  db from '../src/database';
 import routes from '../src/routes'
 import cors from 'cors'
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 app.use(routes)
 app.use(cors());
-
 db.on('conected', () => {})
 db.on('error', (error) => {
     return error;
