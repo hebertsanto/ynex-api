@@ -12,6 +12,6 @@ db.on("error", (error) => {
   return error;
 });
 
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log("servidor ok");
 });
