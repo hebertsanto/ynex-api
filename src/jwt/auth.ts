@@ -1,0 +1,5 @@
+
+
+const authMiddleware = () => {
+  //todo later
+}

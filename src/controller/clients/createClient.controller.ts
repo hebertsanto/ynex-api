@@ -2,7 +2,7 @@ import clientModel from "../../models";
 import { Request, Response } from "express";
 
 export const createClientController = async (req: Request, res: Response) => {
-  const { name, email, cep, user,address, phoneNumber } = req.body;
+  const { name, email, cep, user, address, phoneNumber } = req.body;
 
   const emailAlreadyExists = await clientModel.findOne({ email });
 
@@ -20,7 +20,7 @@ export const createClientController = async (req: Request, res: Response) => {
     cep,
     address,
     phoneNumber,
-    user
+    user,
   });
   res
     .json({

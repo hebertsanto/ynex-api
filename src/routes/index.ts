@@ -5,7 +5,8 @@ import { getAClientController } from "../controller/clients/getClient.controller
 import { createClientController } from "../controller/clients/createClient.controller";
 import { updateClientController } from "../controller/clients/updateClient.controller";
 import { deleteClientController } from "../controller/clients/deleteClient.controller";
-import { CreateUser, getAllClientsUser } from "../controller/user/index";
+import { CreateUser } from "../controller/user/createUser";
+import { getAllClientsUser } from "../controller/user/getAllClintesUser";
 
 router.get("/clients", getAllClientsController);
 router.get("/client/:id", getAClientController);
@@ -16,4 +17,3 @@ router.post("/user", CreateUser);
 router.get("/user/:id", getAllClientsUser);
 
 export default router;
-
