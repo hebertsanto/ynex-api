@@ -22,6 +22,11 @@ const clientModel = new Schema({
     type: "string",
     required: true,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'User',
+    required: true,
+  }
 });
 
 export default mongoose.model("Client", clientModel);

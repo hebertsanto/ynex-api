@@ -3,6 +3,7 @@
       "strict": true,
       "target": "ES6",
       "module": "commonjs",
+      "types": ["node"],
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
