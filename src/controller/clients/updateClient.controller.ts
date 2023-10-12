@@ -1,4 +1,4 @@
-import clientModel from "../../models";
+import clientModel from "../../models/clients";
 import { Request, Response } from "express";
 
 export const updateClientController = async (req: Request, res: Response) => {

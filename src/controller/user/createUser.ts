@@ -1,3 +1,4 @@
+import { generateToken } from "../../jwt";
 import userModel from "../../models/user";
 import { hashPassword } from "../../util/hash";
 import { Request, Response } from "express";
@@ -12,6 +13,9 @@ export const CreateUser = async (req: Request, res: Response) => {
       msg: "email already in use",
     });
   }
+  const token = generateToken('jsdijfidsjifa');
+
+  console.log(token);
   try {
    
     const hash = await hashPassword(password);

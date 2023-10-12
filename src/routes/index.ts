@@ -7,13 +7,15 @@ import { updateClientController } from "../controller/clients/updateClient.contr
 import { deleteClientController } from "../controller/clients/deleteClient.controller";
 import { CreateUser } from "../controller/user/createUser";
 import { getAllClientsUser } from "../controller/user/getAllClintesUser";
+import { Login } from "../auth/login/index.";
+import { authMiddleware } from "../jwt/auth";
 
-router.get("/clients", getAllClientsController);
-router.get("/client/:id", getAClientController);
-router.post("/clients", createClientController);
-router.put("/client/:id", updateClientController);
-router.delete("/client/:id", deleteClientController);
+router.get("/clients", authMiddleware, getAllClientsController);
+router.get("/client/:id", authMiddleware, getAClientController);
+router.post("/clients", authMiddleware, createClientController);
+router.put("/client/:id", authMiddleware, updateClientController);
+router.delete("/client/:id", authMiddleware, deleteClientController);
+router.get("/user/:id", authMiddleware, getAllClientsUser);
 router.post("/user", CreateUser);
-router.get("/user/:id", getAllClientsUser);
-
+router.post("/login", Login);
 export default router;

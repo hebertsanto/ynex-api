@@ -1,4 +1,4 @@
-import clientModel from '../../models';
+import clientModel from "../../models/clients";
 import { Request, Response} from 'express';
 
 export const deleteClientController = async (req: Request, res: Response) => {
