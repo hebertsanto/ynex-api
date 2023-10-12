@@ -4,12 +4,12 @@ import { Request, Response } from "express";
 export const getAllClientsController = async (req: Request, res: Response) => {
   try {
     const clients = await clientModel.find();
-    res.json({
+   return res.json({
       msg: "all clients here",
       clients,
     });
   } catch (error) {
-    res
+    return res
       .json({
         msg: "some error occured",
       })
