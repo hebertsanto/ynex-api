@@ -5,12 +5,12 @@ export const getAClientController = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     const client = await clientModel.findById(id);
-    res.json({
+    return res.json({
       msg: "a client here",
       client,
     });
   } catch (error) {
-    res
+    return res
       .json({
         msg: "some error occured",
       })

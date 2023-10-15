@@ -9,10 +9,6 @@ export const getAllClientsController = async (req: Request, res: Response) => {
       clients,
     });
   } catch (error) {
-    return res
-      .json({
-        msg: "some error occured",
-      })
-      .status(400);
+     return error;
   }
 };

@@ -5,6 +5,7 @@ import { config } from "dotenv";
 config();
 
 export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+  
   const header = req.headers["authorization"];
   const token = header && header.split(" ")[1];
   const secret = process.env?.SECRET_JWT || 'hash';
@@ -14,11 +15,11 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
       msg: "rota protegida você precisa fornecer o token de acesso",
     });
   }
+  
   jwt.verify(token, secret, (error, decoded) => {
     if (error) {
       return res.json({
-        msg: "houve algum error no token",
-        token
+        msg: "o token não é mais válido, executar o login novamente."
       });
     }
   });

@@ -13,7 +13,7 @@ export const updateClientController = async (req: Request, res: Response) => {
       });
     }
 
-    res
+    return res
       .json({
         msg: "edit successfully",
       })

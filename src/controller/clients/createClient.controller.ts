@@ -22,7 +22,7 @@ export const createClientController = async (req: Request, res: Response) => {
     phoneNumber,
     user,
   });
-  res
+  return res
     .json({
       msg: "add client successfully",
       createClient,

@@ -24,7 +24,7 @@ export const CreateUser = async (req: Request, res: Response) => {
       email,
       password: hash,
     });
-    res
+    return res
       .json({
         msg: "user created successfully",
         newUser,

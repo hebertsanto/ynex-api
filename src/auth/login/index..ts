@@ -25,11 +25,12 @@ export const Login = async (req: Request, res: Response) => {
       });
     }
 
-    res
+    return res
       .json({
         msg: "user login successful and token was generated",
         email,
         token,
+        user,
       })
       .status(201);
   } catch (err) {

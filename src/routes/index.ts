@@ -18,4 +18,5 @@ router.delete("/client/:id", authMiddleware, deleteClientController);
 router.get("/user/:id", authMiddleware, getAllClientsUser);
 router.post("/user", CreateUser);
 router.post("/login", Login);
+
 export default router;
