@@ -22,6 +22,14 @@ const clientModel = new Schema({
     type: "string",
     required: true,
   },
+  cpf:{
+    required:true,
+    type: "string",
+  },
+  rg:{
+    required:true,
+    type: "string",
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

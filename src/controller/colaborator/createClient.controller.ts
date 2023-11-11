@@ -1,8 +1,9 @@
-import clientModel from "../../models/clients";
+import clientModel from "../../models/colaborator";
 import { Request, Response } from "express";
 
 export const createClientController = async (req: Request, res: Response) => {
-  const { name, email, cep, user, address, phoneNumber } = req.body;
+
+  const { name, email, cep, rg,user,cpf, address, phoneNumber } = req.body;
 
   const emailAlreadyExists = await clientModel.findOne({ email });
 
@@ -20,6 +21,8 @@ export const createClientController = async (req: Request, res: Response) => {
     cep,
     address,
     phoneNumber,
+    cpf,
+    rg,
     user,
   });
   return res
@@ -29,12 +32,4 @@ export const createClientController = async (req: Request, res: Response) => {
     })
     .status(201);
 
-  try {
-  } catch (error) {
-    return res
-      .json({
-        msg: "some error occured",
-      })
-      .status(400);
-  }
 };

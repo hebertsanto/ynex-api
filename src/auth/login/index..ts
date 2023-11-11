@@ -12,7 +12,7 @@ export const Login = async (req: Request, res: Response) => {
     if (!user) {
       return res
         .json({
-          msg: "invalid email or password",
+          msg: "nenhum registro desse email no banco de dados",
         })
         .status(401);
     }

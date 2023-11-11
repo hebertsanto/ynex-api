@@ -1,4 +1,4 @@
-import clientModel from "../../models/clients";
+import clientModel from "../../models/colaborator";
 import { Request, Response } from "express";
 
 export const getAClientController = async (req: Request, res: Response) => {

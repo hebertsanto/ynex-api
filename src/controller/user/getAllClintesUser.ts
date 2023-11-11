@@ -1,4 +1,4 @@
-import clientModel from "../../models/clients";
+import clientModel from "../../models/colaborator";
 import userModel from "../../models/user";
 import { Request, Response } from "express";
 
