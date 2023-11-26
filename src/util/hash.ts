@@ -5,6 +5,6 @@ export const hashPassword = async (password: string) => {
     const hash = bcrypt.hash(password, 10);
     return hash;
   } catch (e) {
-    console.log(e, "hask endfo");
+    console.log(e, "some arror occurred");
   }
 };

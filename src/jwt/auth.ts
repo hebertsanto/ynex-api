@@ -4,7 +4,11 @@ import { config } from "dotenv";
 
 config();
 
-export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+interface CustomRequestOptions extends Request{
+  id?: any;
+}
+
+export const authMiddleware = (req: CustomRequestOptions, res: Response, next: NextFunction) => {
   
   const header = req.headers["authorization"];
   const token = header && header.split(" ")[1];
@@ -12,16 +16,19 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
 
   if (!token) {
     return res.json({
-      msg: "rota protegida você precisa fornecer o token de acesso",
+      msg: "token not found",
     });
   }
   
   jwt.verify(token, secret, (error, decoded) => {
     if (error) {
       return res.json({
-        msg: "o token não é mais válido, executar o login novamente."
-      });
-    }
+        msg: "this token is not valid"
+      }).status(400);
+    };
+
+     req.id = decoded;
+     next();
   });
 
   next();

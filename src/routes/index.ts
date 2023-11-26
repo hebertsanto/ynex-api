@@ -1,12 +1,12 @@
 import express from "express";
 const router = express.Router();
-import { getAllClientsController } from "../controller/colaborator/getAllClients.controller";
-import { getAClientController } from "../controller/colaborator/getClient.controller";
-import { createClientController } from "../controller/colaborator/createClient.controller";
-import { updateClientController } from "../controller/colaborator/updateClient.controller";
-import { deleteClientController } from "../controller/colaborator/deleteClient.controller";
-import { CreateUser } from "../controller/user/createUser";
-import { getAllClientsUser } from "../controller/user/getAllClintesUser";
+import { getAllClientsController } from "../controller/colaborator/getAllColaborator.controller";
+import { getAClientController } from "../controller/colaborator/getColaborator.controller";
+import { createClientController } from "../controller/colaborator/createColaborator.controller";
+import { updateClientController } from "../controller/colaborator/updateColaborator.controller";
+import { deleteClientController } from "../controller/colaborator/deleteColaborator.controller";
+import { CreateUser } from "../controller/admin/createUser";
+import { getAllClientsUser } from "../controller/admin/getAllClintesUser";
 import { Login } from "../auth/login/index.";
 import { authMiddleware } from "../jwt/auth";
 

@@ -4,11 +4,14 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 
 export const Login = async (req: Request, res: Response) => {
+  
   const { email, password } = req.body;
 
   try {
+
     const user = await userModel.findOne({ email });
     const token = generateToken(user?.password);
+
     if (!user) {
       return res
         .json({
@@ -37,6 +40,6 @@ export const Login = async (req: Request, res: Response) => {
     return res.json({
       msg: "error",
       err,
-    });
+    }).status(400);
   }
 };
