@@ -25,6 +25,7 @@ export const createClientController = async (req: Request, res: Response) => {
     rg,
     user,
   });
+  
   return res
     .json({
       msg: "add client successfully",

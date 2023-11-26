@@ -1,0 +1,5 @@
+export * from './createColaborator.controller'
+export * from './deleteColaborator.controller'
+export * from './updateColaborator.controller'
+export * from './getAllColaborator.controller'
+export * from './getColaborator.controller'

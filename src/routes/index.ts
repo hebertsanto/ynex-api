@@ -1,22 +1,26 @@
 import express from "express";
 const router = express.Router();
-import { getAllClientsController } from "../controller/colaborator/getAllColaborator.controller";
-import { getAClientController } from "../controller/colaborator/getColaborator.controller";
-import { createClientController } from "../controller/colaborator/createColaborator.controller";
-import { updateClientController } from "../controller/colaborator/updateColaborator.controller";
-import { deleteClientController } from "../controller/colaborator/deleteColaborator.controller";
+
+import {
+  createClientController,
+  deleteClientController,
+  getAClientController,
+  getAllClientsController,
+  updateClientController,
+} from "../controller/colaborator/index";
+
 import { CreateUser } from "../controller/admin/createUser";
 import { getAllClientsUser } from "../controller/admin/getAllClintesUser";
 import { Login } from "../auth/login/index.";
 import { authMiddleware } from "../jwt/auth";
 
-router.get("/clients", authMiddleware, getAllClientsController);
-router.get("/client/:id", authMiddleware, getAClientController);
-router.post("/clients", authMiddleware, createClientController);
-router.put("/client/:id", authMiddleware, updateClientController);
-router.delete("/client/:id", authMiddleware, deleteClientController);
-router.get("/user/:id", authMiddleware, getAllClientsUser);
-router.post("/user", CreateUser);
-router.post("/login", Login);
+router.get("/colaborator", authMiddleware, getAllClientsController);
+router.get("/colaborator/:id", authMiddleware, getAClientController);
+router.post("/colaborator", authMiddleware, createClientController);
+router.put("/colaborator/:id", authMiddleware, updateClientController);
+router.delete("/colaborator/:id", authMiddleware, deleteClientController);
+router.get("/admin/:id", authMiddleware, getAllClientsUser);
+router.post("/admin", CreateUser);
+router.post("/auth/login", Login);
 
 export default router;
